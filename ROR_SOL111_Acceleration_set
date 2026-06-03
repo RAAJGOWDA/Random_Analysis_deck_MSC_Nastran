@@ -3,13 +3,7 @@ ASSIGN MASTER='eneter your file name_sol103_freq_2000hz.MASTER'
 $
 SOL 111
 CEND
-SET 3 = 16714,27418,27840,30322,46350,60835,
-        62365,64359,64849,65174,72439,73258,
-        89821,95836,97552,114972,116523,118858,
-        134141,140784,143340,145060,147500,147800,
-        155554,156213,168789,174035,180088,180677,
-        182237,188097,199320,200660,322692,323707,
-        325314,365220,365644{The Elements consisting acceleration input was selected and used here}
+SET 3 = {The Elements consisting acceleration input was selected and used here}
 $
 $
 ECHO=NONE
