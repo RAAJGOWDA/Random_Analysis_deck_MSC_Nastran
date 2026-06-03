@@ -1,28 +1,34 @@
-# Random_Analysis_deck_MSC_Nastran #Acceleration Set3
 RESTART VERSION=1 KEEP
-ASSIGN MASTER='enter yor file name here_sol103_freq_2000hz.MASTER'
+ASSIGN MASTER='eneter your file name_sol103_freq_2000hz.MASTER'
 $
 SOL 111
 CEND
+SET 3 = 16714,27418,27840,30322,46350,60835,
+        62365,64359,64849,65174,72439,73258,
+        89821,95836,97552,114972,116523,118858,
+        134141,140784,143340,145060,147500,147800,
+        155554,156213,168789,174035,180088,180677,
+        182237,188097,199320,200660,322692,323707,
+        325314,365220,365644{The Elements consisting acceleration input was selected and used here}
+$
 $
 ECHO=NONE
-include 'include\enter the random set file bdf with acceleration input name here_set_elm_random.bdf'
-Set 3 = 500001
+$include 'include\enter your random file fem bdf here.bdf'
 $
 SPC =       1
 METHOD =    91
 RANDOM = 96
-STRESS(PLOT,REAL,PSDF,NORPRINT) = 1
-ACCELERATION(plot,rprint, psdf)=3
+$STRESS(PLOT,REAL,PSDF,NORPRINT) = 1
+ACCELERATION(PLOT,REAL,PSDF,NORPRINT)=3
 FREQUENCY =       92
 SDAMPING(STRUCTURE) =     1001
 $
 SUBCASE       1
   LABEL= FWD(-X)
   DLOAD =       93
-$2345678$2345678$2345678$2345678$2345678$2345678$2345678$2345678$2345678
+$
 BEGIN BULK
-PARAM,          RESVEC,                YES
+PARAM,          RESVEC,             YES
 PARAM,         ENFMETH,             REL
 PARAM,         ENFMOTN,             REL
 PARAM,         OUGCORD,          GLOBAL
@@ -34,7 +40,7 @@ PARAM,MAXRATIO,1.0+8
 PARAM,POST,-1      
 PARAM,SNORM,20.0    
 $  
-include 'include\enter your entire fem bdf name here.bdf'
+include 'include\enter the fem without payload here.bdf'
 $
 RANDPS        96       1       1     1.0     0.0    1003
 SPC            1  500001  123456     0.0
@@ -59,5 +65,5 @@ TABLED1     1002  LINEAR  LINEAR
 +            0.0     0.0     1.0  9810.0  2000.0  9810.0ENDT    
 TABRND1     1003     LOG     LOG
 +           20.0    0.01    80.0    0.04   350.0    0.04  2000.0   0.008
-+         2000.1   0.008ENDT
++         2000.1   0.008ENDT    
 ENDDATA
